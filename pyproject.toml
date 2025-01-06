@@ -1,0 +1,41 @@
+
+[project]
+name = "finance-flow-ai"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+description = "FinanceFlowAI: Personal finance-focused language model project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.3",
+    "transformers>=4.30.0",
+    "datasets>=3.0.0",
+    "evaluate>=0.4.0",
+    "nltk>=3.8.1",
+    "scikit-learn>=1.2.0",
+    "torch>=2.0.0",
+    "pyfiglet>=1.0.0",
+    "rich>=13.0.0",
+    "numpy>=1.24.0",
+    "tqdm>=4.64.0",
+    "accelerate>=0.17.0"
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv.sources]
+torch = { index = "pytorch", marker = "platform_machine == 'x86_64'" }
+
+[tool.uv.index]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/torch_stable.html"
+explicit = true
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
